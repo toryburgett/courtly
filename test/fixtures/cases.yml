@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plaintiff: MyString
+  defendant: MyString
+  opiniondate: 2015-11-16
+  argument: 2015-11-16
+  description: MyText
+  judgement: MyText
+
+two:
+  plaintiff: MyString
+  defendant: MyString
+  opiniondate: 2015-11-16
+  argument: 2015-11-16
+  description: MyText
+  judgement: MyText
