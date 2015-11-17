@@ -8,3 +8,6 @@
 
 User.destroy_all
 Case.destroy_all
+
+
+Case.create!( plaintiff: "fhaeoilhrfotur", defendant: "fawbeisultfye")

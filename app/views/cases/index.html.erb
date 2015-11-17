@@ -1,0 +1,11 @@
+<div class="contentTitle">
+  <h1>Cases - <%= link_to "(+)", new_case_path() %></h1>
+</div>
+<div class="caseAll">
+  <% @cases.each do |cse| %>
+    <div class="caseSub">
+      <h2><%= link_to cse.defendant, case_path(cse) %> <%= link_to "(edit)", edit_case_path(cse) %>  <span class="caseDelete"><%= link_to "(destroy)", case_path(cse), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
+      <p><%= cse.plaintiff %> vs <%= cse.defendant %></p>
+    </div>
+  <% end %>
+</div>

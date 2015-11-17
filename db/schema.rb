@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20151116220919) do
     t.string   "plaintiff"
     t.string   "defendant"
     t.date     "opiniondate"
-    t.date     "argument"
+    t.date     "argumentdate"
     t.text     "description"
     t.text     "judgement"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

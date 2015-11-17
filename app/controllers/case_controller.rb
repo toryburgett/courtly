@@ -1,6 +1,6 @@
 class CaseController < ApplicationController
   def index
-    @case = Case.all
+    @cases = Case.all
   end
 
   def show
