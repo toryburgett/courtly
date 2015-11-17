@@ -4,7 +4,7 @@ class CreateCases < ActiveRecord::Migration
       t.string :plaintiff
       t.string :defendant
       t.date :opiniondate
-      t.date :argument
+      t.date :argumentdate
       t.text :description
       t.text :judgement
 

@@ -1,2 +1,11 @@
-<h1>Case#show</h1>
-<p>Find me in app/views/case/show.html.erb</p>
+<div class="contentTitle">
+  <h2>Showing Case <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
+</div>
+
+<div class="caseSub">
+  <h2><%= @case.plaintiff.to_s + " vs " + @case.defendant.to_s %></h2>
+</div>
+
+<div class="contentEndLinks">
+  <%= link_to "Back to cases", cases_path() %>
+</div>

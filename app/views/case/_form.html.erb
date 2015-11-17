@@ -1,0 +1,48 @@
+<div class="caseForm">
+<%= form_for @case do |f| %>
+
+  <% if @case.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@case.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @case.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :plaintiff %><br>
+    <%= f.text_field :plaintiff %>
+  </p>
+
+  <p>
+    <%= f.label :defendant %><br>
+    <%= f.text_field :defendant %>
+  </p>
+  <p>
+    <%= f.label :opiniondate %><br>
+    <%= f.text_field :opiniondate %>
+  </p>
+  <p>
+    <%= f.label :argumentdate %><br>
+    <%= f.text_field :argumentdate %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :judgement %><br>
+    <%= f.text_field :judgement %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>
+</div>
