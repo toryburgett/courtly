@@ -6,20 +6,24 @@
     <div class="caseSub">
       <h2><%= link_to cse.defendant, case_path(cse) %> <%= link_to "(edit)", edit_case_path(cse) %>  <span class="caseDelete"><%= link_to "(destroy)", case_path(cse), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 
-
-      <h2><%= cse.plaintiff %> vs <%= cse.defendant %></h2>
-      
-      <h3>Argument Date: <%= link_to cse.argument_date, cse.sc_arg_url %> || Opinions Delivered: <%= link_to cse.opinion_date, cse.sc_op_url %> </h3>
-
-      <h3>Question: </h3>
-      <p><%= cse.description %> || <%= link_to cse.description_source, cse.description_source_url %></p>
-
-      <h3>Judgement: </h3>
-      <p><%= cse.judgement %> || <%= link_to cse.judgement_source, cse.judgement_source_url %></p>
-
-      <h3>Resources:</h3>
-      <span><%= link_to "Supreme Court", cse.sc_url %> || <%= link_to "ScotusBlog", cse.scotusblog_url %> || <%= link_to "Oyez", cse.oyez_url %> || <%= link_to "Justia", cse.justia_url %></span>
-
+      <div class="caseName">
+        <h2><%= cse.plaintiff %> vs <%= cse.defendant %></h2>
+      </div>
+      <div class="caseDates">
+        <h3>Argument Date: <%= link_to cse.argument_date, cse.sc_arg_url %> || Opinions Delivered: <%= link_to cse.opinion_date, cse.sc_op_url %> </h3>
+      </div>
+      <div class="caseDescription">
+        <h3>Question: </h3>
+        <p><%= cse.description %> || <%= link_to cse.description_source, cse.description_source_url %></p>
+      </div>
+      <div class="caseJudgement">
+        <h3>Judgement: </h3>
+        <p><%= cse.judgement %> || <%= link_to cse.judgement_source, cse.judgement_source_url %></p>
+      </div>
+      <div class="caseResources">
+        <h3>Resources:</h3>
+        <span><%= link_to "Supreme Court", cse.sc_url %> || <%= link_to "ScotusBlog", cse.scotusblog_url %> || <%= link_to "Oyez", cse.oyez_url %> || <%= link_to "Justia", cse.justia_url %></span>
+      </div>
     </div>
   <% end %>
 </div>
