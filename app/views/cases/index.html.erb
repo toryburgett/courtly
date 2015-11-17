@@ -5,7 +5,27 @@
   <% @cases.each do |cse| %>
     <div class="caseSub">
       <h2><%= link_to cse.defendant, case_path(cse) %> <%= link_to "(edit)", edit_case_path(cse) %>  <span class="caseDelete"><%= link_to "(destroy)", case_path(cse), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
-      <p><%= cse.plaintiff %> vs <%= cse.defendant %></p>
+
+
+      <h2><%= cse.plaintiff %> vs <%= cse.defendant %></h2>
+      <h3>Argument Date: <%= link_to cse.argument_date, url(cse.sc_arg_url) %> || Opinions Delivered: <%= opinion_date %></h3>
+      <!-- <p>t.text :description
+      t.text :description_source
+      t.text :description_source_url
+
+
+      t.text :judgement
+      t.text :judgement_source
+      t.text :judgement_source_url
+
+      t.string :sc_arg_url
+      t.string :sc_op_url
+      t.string :sc_url
+      t.string :scotusblog_url
+      t.string :oyez_url
+      t.string :justia_url
+ -->
+
     </div>
   <% end %>
 </div>
