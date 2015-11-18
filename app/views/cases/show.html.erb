@@ -26,19 +26,18 @@
 
 
   <div class="justiceAll">
+    <% testvar = 0 %>
     <% @justices.each do |justice| %>
       <div class="justiceSub">
         <div class="justiceName">
-          <% if (justice.opinions.find_by(case_id: @case).majority_with === 1) do %>
+          <% if (justice.opinions.find_by(case_id: @case).majority_with == 1) %>
+            <% testvar = testvar + 1 %>
             <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).majority_with  %> </h2>
-
-          <% elsif (justice.opinions.find_by(case_id: @case).dissent_with === 1) do %>
+          <% elsif (justice.opinions.find_by(case_id: @case).dissent_with == 1) %>
             <h2><%= justice.name %> - DISSENT </h2>
-
-        <% else do %>
-          <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).num_opinions_signed  %> </h2>
-        <% end %>
-
+          <% else %>
+            <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).num_opinions_signed  %> </h2>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -50,3 +49,5 @@
 <div class="contentEndLinks">
   <%= link_to "Back to cases", cases_path() %>
 </div>
+
+<%= testvar %>

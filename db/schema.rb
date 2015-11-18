@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20151117205547) do
 
   create_table "justices", force: :cascade do |t|
     t.string   "name"
+    t.string   "full_name"
+    t.string   "title"
+    t.text     "bio"
+    t.string   "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,9 +50,64 @@ ActiveRecord::Schema.define(version: 20151117205547) do
   create_table "opinions", force: :cascade do |t|
     t.integer  "case_id"
     t.integer  "justice_id"
-    t.string   "ruling"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "majority_with",             default: 0
+    t.integer  "majority_wrote",            default: 0
+    t.integer  "majority_joined",           default: 0
+    t.integer  "majority_joined_full",      default: 0
+    t.integer  "majority_joined_part",      default: 0
+    t.integer  "concurrance_1_wrote",       default: 0
+    t.integer  "concurrance_1_joined",      default: 0
+    t.integer  "concurrance_1_joined_full", default: 0
+    t.integer  "concurrance_1_joined_part", default: 0
+    t.integer  "concurrance_2_wrote",       default: 0
+    t.integer  "concurrance_2_joined",      default: 0
+    t.integer  "concurrance_2_joined_full", default: 0
+    t.integer  "concurrance_2_joined_part", default: 0
+    t.integer  "concurrance_3_wrote",       default: 0
+    t.integer  "concurrance_3_joined",      default: 0
+    t.integer  "concurrance_3_joined_full", default: 0
+    t.integer  "concurrance_3_joined_part", default: 0
+    t.integer  "concurrance_4_wrote",       default: 0
+    t.integer  "concurrance_4_joined",      default: 0
+    t.integer  "concurrance_4_joined_full", default: 0
+    t.integer  "concurrance_4_joined_part", default: 0
+    t.integer  "dissent_with",              default: 0
+    t.integer  "dissent_1_wrote",           default: 0
+    t.integer  "dissent_1_joined",          default: 0
+    t.integer  "dissent_1_joined_full",     default: 0
+    t.integer  "dissent_1_joined_part",     default: 0
+    t.integer  "dissent_2_wrote",           default: 0
+    t.integer  "dissent_2_joined",          default: 0
+    t.integer  "dissent_2_joined_full",     default: 0
+    t.integer  "dissent_2_joined_part",     default: 0
+    t.integer  "dissent_3_wrote",           default: 0
+    t.integer  "dissent_3_joined",          default: 0
+    t.integer  "dissent_3_joined_full",     default: 0
+    t.integer  "dissent_3_joined_part",     default: 0
+    t.integer  "dissent_4_wrote",           default: 0
+    t.integer  "dissent_4_joined",          default: 0
+    t.integer  "dissent_4_joined_full",     default: 0
+    t.integer  "dissent_4_joined_part",     default: 0
+    t.integer  "con_dissent_1_wrote",       default: 0
+    t.integer  "con_dissent_1_joined",      default: 0
+    t.integer  "con_dissent_1_joined_full", default: 0
+    t.integer  "con_dissent_1_joined_part", default: 0
+    t.integer  "con_dissent_2_wrote",       default: 0
+    t.integer  "con_dissent_2_joined",      default: 0
+    t.integer  "con_dissent_2_joined_full", default: 0
+    t.integer  "con_dissent_2_joined_part", default: 0
+    t.integer  "con_dissent_3_wrote",       default: 0
+    t.integer  "con_dissent_3_joined",      default: 0
+    t.integer  "con_dissent_3_joined_full", default: 0
+    t.integer  "con_dissent_3_joined_part", default: 0
+    t.integer  "con_dissent_4_wrote",       default: 0
+    t.integer  "con_dissent_4_joined",      default: 0
+    t.integer  "con_dissent_4_joined_full", default: 0
+    t.integer  "con_dissent_4_joined_part", default: 0
+    t.integer  "no_part",                   default: 0
+    t.integer  "num_opinions_signed",       default: 1
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "opinions", ["case_id"], name: "index_opinions_on_case_id", using: :btree

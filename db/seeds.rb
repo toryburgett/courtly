@@ -86,7 +86,7 @@ sotomayor.opinions.create(
  dissent_with: 1,
  dissent_1_wrote: 1,
  dissent_1_joined: 1,
- dissent_joined_full: 1,
+ dissent_1_joined_full: 1,
 )
 
 kagan.opinions.create(
@@ -133,7 +133,7 @@ thomas.opinions.create(
    dissent_with: 1,
 
    dissent_1_joined: 1,
-   dissent_1_joined_part: 1
+   dissent_1_joined_part: 1,
 
    dissent_2_wrote: 1,
    dissent_2_joined: 1,
