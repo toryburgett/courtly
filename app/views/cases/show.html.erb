@@ -70,13 +70,20 @@
 
   <div class="justiceAll">
     <% @justices.each do |justice| %>
+    <% justice_opinion =  justice.opinion.find_by(case_id: @case) %>
       <div class="justiceSub">
         <div class="justiceName">
           <% if (justice.opinions.find_by(case_id: @case).majority_with == 1) %>
+
             <% if (majority_author == justice.name) %>
-              <h2><%= justice.name %>, *DELIVERED OPINION* - Joined court's opinion </h2>
-            <% else %>
-              <h2><%= justice.name %> - Joined court's opinion </h2>
+              <h2><%= justice.name %>, *DELIVERED OPINION* - Joined the Court's opinion </h2>
+            <% elsif (justice_opinion.majority_joined_part == 1) %>
+              <h2><%= justice.name %> - In part, joined the Court's opinion </h2>
+            <% elsif (justice_opinion.majority_joined_full == 1) %>
+                <h2><%= justice.name %> - Joined the Court's opinion </h2>
+
+            <%= elsif (justice_opinion.name == concurrance_1_author) %>
+
             <% end %>
 
           <% elsif ((justice.opinions.find_by(case_id: @case).majority_with == 0)&&(justice.opinions.find_by(case_id: @case).dissent_with == 1)) %>

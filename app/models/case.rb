@@ -5,4 +5,7 @@ class Case < ActiveRecord::Base
   has_many :opinions
   has_many :justices, through: :opinions
 
+  def self.something_to_say
+    where(opinions: { concurrance_1_wrote: 1}).joins(:opinions)
+  end
 end
