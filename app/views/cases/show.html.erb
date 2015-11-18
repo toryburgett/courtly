@@ -25,18 +25,67 @@
   </div>
 
 
+
+<% @justices.each do |justice| %>
+  <% if ((justice.opinions.find_by(case_id: @case).majority_wrote == 1) %>
+    <% majority_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).concurrance_1_wrote == 1) %>
+    <% concurrance_1_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).concurrance_2_wrote == 1) %>
+    <% concurrance_2_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).concurrance_3_wrote == 1) %>
+    <% concurrance_3_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).concurrance_4_wrote == 1) %>
+    <% concurrance_4_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).dissent_1_wrote == 1) %>
+    <% dissent_1_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).dissent_2_wrote == 1) %>
+    <% dissent_2_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).dissent_3_wrote == 1) %>
+    <% dissent_3_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).dissent_4_wrote == 1) %>
+    <% dissent_4_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_1_wrote == 1) %>
+    <% con_dissent_1_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_2_wrote == 1) %>
+    <% con_dissent_2_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_3_wrote == 1) %>
+    <% con_dissent_3_author = justice.name %>
+  <% end %>
+  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_4_wrote == 1) %>
+    <% con_dissent_4_author = justice.name %>
+  <% end %>
+<% end %>
+
   <div class="justiceAll">
-    <% testvar = 0 %>
     <% @justices.each do |justice| %>
       <div class="justiceSub">
         <div class="justiceName">
           <% if (justice.opinions.find_by(case_id: @case).majority_with == 1) %>
-            <% testvar = testvar + 1 %>
+
             <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).majority_with  %> </h2>
-          <% elsif (justice.opinions.find_by(case_id: @case).dissent_with == 1) %>
+            <% if (justice.opinions.find_by(case_id: @case).dissent_with == 0) %>
+
+
+          <% elsif ((justice.opinions.find_by(case_id: @case).majority_with == 0)&&(justice.opinions.find_by(case_id: @case).dissent_with == 1)) %>
             <h2><%= justice.name %> - DISSENT </h2>
+
+
+          <% elsif ((justice.opinions.find_by(case_id: @case).majority_with == 0)&&(justice.opinions.find_by(case_id: @case).dissent_with == 0)&&(justice.opinions.find_by(case_id: @case).no_part == 1)) %>
+            <h2><%= justice.name %> - Justice did not participate in the vote </h2>
           <% else %>
-            <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).num_opinions_signed  %> </h2>
+            <h2><%= justice.name %> - SOMETHING WENT WRONG </h2>
           <% end %>
         </div>
       </div>
@@ -49,5 +98,3 @@
 <div class="contentEndLinks">
   <%= link_to "Back to cases", cases_path() %>
 </div>
-
-<%= testvar %>
