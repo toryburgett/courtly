@@ -27,11 +27,11 @@ case1 = Case.create!(plaintiff: "Heien", defendant: "North Carolina", argument_d
 
 roberts.opinions.create(
  case: case1,
- majority_with: 0,
+ majority_with: 1,
 
- majority_wrote: 0,
- majority_joined: 0,
- majority_joined_full: 0,
+ majority_wrote: 1,
+ majority_joined: 1,
+ majority_joined_full: 1,
  majority_joined_part: 0,
 
  concurrance_wrote: 0,
@@ -58,16 +58,16 @@ roberts.opinions.create(
  con_dissent_joined_number: 0,
 
  no_part: 0,
- num_opinions_signed: 0,
+ num_opinions_signed: 1,
 )
 
 scalia.opinions.create(
  case: case1,
- majority_with: 0,
+ majority_with: 1,
 
  majority_wrote: 0,
- majority_joined: 0,
- majority_joined_full: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
  majority_joined_part: 0,
 
  concurrance_wrote: 0,
@@ -83,6 +83,334 @@ scalia.opinions.create(
  dissent_number: 0,
  dissent_joined: 0,
  dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+kennedy.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+thomas.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+ginsburg.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 1,
+ concurrance_joined_full: 1,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 1,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 2,
+)
+
+breyer.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+alito.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+sotomayor.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 1,
+
+ dissent_wrote: 1,
+ dissent_number: 1,
+ dissent_joined: 1,
+ dissent_joined_full: 1,
+ dissent_joined_part: 0,
+ dissent_joined_number: 1,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+kagan.opinions.create(
+ case: case1,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 1,
+ concurrance_number: 1,
+ concurrance_joined: 1,
+ concurrance_joined_full: 1,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 1,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+
+case2 = Case.create!(plaintiff: "Dart Cherokee Basin Operating Company, LLC", defendant: "Owens", argument_date: "Oct 7, 2014", opinion_date: "Dec 15, 2014", description: "Is a defendant seeking removal of a case to federal court required to provide evidence supporting federal jurisdiction in the notice of removal?", description_source: "Oyez", description_source_url: "https://www.oyez.org/cases/2014/13-719", judgement: "Reversed, 5-4, in an opinion by Justice Ginsburg on December 15, 2014. Justice Scalia filed a dissenting opinion, in which Justice Kennedy and Justice Kagan joined, and which Justice Thomas joined as to all but the last sentence. Justice Thomas also filed a dissenting opinion.", judgement_source: "ScotusBlog", judgement_source_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", sc_arg_url: "http://www.supremecourt.gov/oral_arguments/argument_transcripts/13-719_3dq3.pdf", sc_op_url: "http://www.supremecourt.gov/opinions/14pdf/13-719_8mjp.pdf", sc_url: "http://www.supremecourt.gov/Search.aspx?FileName=/docketfiles/13-719.htm", scotusblog_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", oyez_url: "https://www.oyez.org/cases/2014/13-719", justia_url: "https://supreme.justia.com/cases/federal/us/574/13-719/" )
+
+
+roberts.opinions.create(
+ case: case2,
+ majority_with: 1,
+
+ majority_wrote: 0,
+ majority_joined: 1,
+ majority_joined_full: 1,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 1,
+)
+
+scalia.opinions.create(
+ case: case2,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 1,
+
+ dissent_wrote: 1,
+ dissent_number: 1,
+ dissent_joined: 1,
+ dissent_joined_full: 1,
  dissent_joined_part: 0,
  dissent_joined_number: 0,
 
@@ -98,7 +426,7 @@ scalia.opinions.create(
 )
 
 kennedy.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -134,7 +462,7 @@ kennedy.opinions.create(
 )
 
 thomas.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -170,7 +498,7 @@ thomas.opinions.create(
 )
 
 ginsburg.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -206,7 +534,7 @@ ginsburg.opinions.create(
 )
 
 breyer.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -242,7 +570,7 @@ breyer.opinions.create(
 )
 
 alito.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -278,7 +606,7 @@ alito.opinions.create(
 )
 
 sotomayor.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -314,7 +642,7 @@ sotomayor.opinions.create(
 )
 
 kagan.opinions.create(
- case: case1,
+ case: case2,
  majority_with: 0,
 
  majority_wrote: 0,
@@ -348,11 +676,6 @@ kagan.opinions.create(
  no_part: 0,
  num_opinions_signed: 0,
 )
-
-
-case2 = Case.create!(plaintiff: "Dart Cherokee Basin Operating Company, LLC", defendant: "Owens", argument_date: "Oct 7, 2014", opinion_date: "Dec 15, 2014", description: "Is a defendant seeking removal of a case to federal court required to provide evidence supporting federal jurisdiction in the notice of removal?", description_source: "Oyez", description_source_url: "https://www.oyez.org/cases/2014/13-719", judgement: "Reversed, 5-4, in an opinion by Justice Ginsburg on December 15, 2014. Justice Scalia filed a dissenting opinion, in which Justice Kennedy and Justice Kagan joined, and which Justice Thomas joined as to all but the last sentence. Justice Thomas also filed a dissenting opinion.", judgement_source: "ScotusBlog", judgement_source_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", sc_arg_url: "http://www.supremecourt.gov/oral_arguments/argument_transcripts/13-719_3dq3.pdf", sc_op_url: "http://www.supremecourt.gov/opinions/14pdf/13-719_8mjp.pdf", sc_url: "http://www.supremecourt.gov/Search.aspx?FileName=/docketfiles/13-719.htm", scotusblog_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", oyez_url: "https://www.oyez.org/cases/2014/13-719", justia_url: "https://supreme.justia.com/cases/federal/us/574/13-719/" )
-
-
 
 
 Case.create!(plaintiff: "Holt", defendant: "Hobbs", argument_date: "", opinion_date: "", description: "", description_source: "", description_source_url: "", judgement: "", judgement_source: "", judgement_source_url: "", sc_arg_url: "", sc_op_url: "", sc_url: "", scotusblog_url: "", oyez_url: "", justia_url: "" )
