@@ -12,8 +12,6 @@ Justice.destroy_all
 Opinion.destroy_all
 
 
-#JUSTICES
-
 roberts = Justice.create!( name: "Roberts", full_name: "John G. Roberts, Jr.", title: "Chief Justice of the United States", bio: "John G. Roberts, Jr., Chief Justice of the United States, was born in Buffalo, New York, January 27, 1955. He married Jane Marie Sullivan in 1996 and they have two children - Josephine and Jack. He received an A.B. from Harvard College in 1976 and a J.D. from Harvard Law School in 1979. He served as a law clerk for Judge Henry J. Friendly of the United States Court of Appeals for the Second Circuit from 1979–1980 and as a law clerk for then-Associate Justice William H. Rehnquist of the Supreme Court of the United States during the 1980 Term. He was Special Assistant to the Attorney General, U.S. Department of Justice from 1981–1982, Associate Counsel to President Ronald Reagan, White House Counsel’s Office from 1982–1986, and Principal Deputy Solicitor General, U.S. Department of Justice from 1989–1993. From 1986–1989 and 1993–2003, he practiced law in Washington, D.C. He was appointed to the United States Court of Appeals for the District of Columbia Circuit in 2003. President George W. Bush nominated him as Chief Justice of the United States, and he took his seat September 29, 2005.", photo_url: "http://www.supremecourt.gov/about/justice_pictures/JRoberts.jpg" )
 scalia = Justice.create!( name: "Scalia", full_name: "Antonin Scalia", title: "Associate Justice", bio: "Antonin Scalia, Associate Justice, was born in Trenton, New Jersey, March 11, 1936. He married Maureen McCarthy and has nine children - Ann Forrest, Eugene, John Francis, Catherine Elisabeth, Mary Clare, Paul David, Matthew, Christopher James, and Margaret Jane. He received his A.B. from Georgetown University and the University of Fribourg, Switzerland, and his LL.B. from Harvard Law School, and was a Sheldon Fellow of Harvard University from 1960–1961. He was in private practice in Cleveland, Ohio from 1961–1967, a Professor of Law at the University of Virginia from 1967–1971, and a Professor of Law at the University of Chicago from 1977–1982, and a Visiting Professor of Law at Georgetown University and Stanford University. He was chairman of the American Bar Association’s Section of Administrative Law, 1981–1982, and its Conference of Section Chairmen, 1982–1983. He served the federal government as General Counsel of the Office of Telecommunications Policy from 1971–1972, Chairman of the Administrative Conference of the United States from 1972–1974, and Assistant Attorney General for the Office of Legal Counsel from 1974–1977. He was appointed Judge of the United States Court of Appeals for the District of Columbia Circuit in 1982. President Reagan nominated him as an Associate Justice of the Supreme Court, and he took his seat September 26, 1986.", photo_url: "http://www.supremecourt.gov/about/justice_pictures/AScalia2.jpg" )
 kennedy = Justice.create!( name: "Kennedy", full_name: "Anthony M. Kennedy", title: "Associate Justice", bio: "Anthony M. Kennedy, Associate Justice, was born in Sacramento, California, July 23, 1936. He married Mary Davis and has three children. He received his B.A. from Stanford University and the London School of Economics, and his LL.B. from Harvard Law School. He was in private practice in San Francisco, California from 1961–1963, as well as in Sacramento, California from 1963–1975. From 1965 to 1988, he was a Professor of Constitutional Law at the McGeorge School of Law, University of the Pacific. He has served in numerous positions during his career, including a member of the California Army National Guard in 1961, the board of the Federal Judicial Center from 1987–1988, and two committees of the Judicial Conference of the United States: the Advisory Panel on Financial Disclosure Reports and Judicial Activities, subsequently renamed the Advisory Committee on Codes of Conduct, from 1979–1987, and the Committee on Pacific Territories from 1979–1990, which he chaired from 1982–1990. He was appointed to the United States Court of Appeals for the Ninth Circuit in 1975. President Reagan nominated him as an Associate Justice of the Supreme Court, and he took his seat February 18, 1988.", photo_url: "http://www.supremecourt.gov/about/justice_pictures/AKennedy.jpg" )
@@ -24,11 +22,298 @@ alito = Justice.create!( name: "Alito", full_name: "Samuel Anthony Alito, Jr.", 
 sotomayor = Justice.create!( name: "Sotomayor", full_name: "Sonia Sotomayor", title: "Associate Justice", bio: "Sonia Sotomayor, Associate Justice, was born in Bronx, New York, on June 25, 1954. She earned a B.A. in 1976 from Princeton University, graduating summa cum laude and receiving the university's highest academic honor. In 1979, she earned a J.D. from Yale Law School where she served as an editor of the Yale Law Journal. She served as Assistant District Attorney in the New York County District Attorney's Office from 1979–1984. She then litigated international commercial matters in New York City at Pavia & Harcourt, where she served as an associate and then partner from 1984–1992. In 1991, President George H.W. Bush nominated her to the U.S. District Court, Southern District of New York, and she served in that role from 1992–1998. She served as a judge on the United States Court of Appeals for the Second Circuit from 1998–2009. President Barack Obama nominated her as an Associate Justice of the Supreme Court on May 26, 2009, and she assumed this role August 8, 2009.", photo_url: "http://www.supremecourt.gov/about/justice_pictures/SSotomayor.jpg" )
 kagan = Justice.create!( name: "Kagan", full_name: "Elena Kagan", title: "Associate Justice", bio: "Elena Kagan, Associate Justice, was born in New York, New York, on April 28, 1960. She received an A.B. from Princeton in 1981, an M. Phil. from Oxford in 1983, and a J.D. from Harvard Law School in 1986. She clerked for Judge Abner Mikva of the U.S. Court of Appeals for the D.C. Circuit from 1986-1987 and for Justice Thurgood Marshall of the U.S. Supreme Court during the 1987 Term. After briefly practicing law at a Washington, D.C. law firm, she became a law professor, first at the University of Chicago Law School and later at Harvard Law School. She also served for four years in the Clinton Administration, as Associate Counsel to the President and then as Deputy Assistant to the President for Domestic Policy. Between 2003 and 2009, she served as the Dean of Harvard Law School. In 2009, President Obama nominated her as the Solicitor General of the United States. A year later, the President nominated her as an Associate Justice of the Supreme Court on May 10, 2010. She took her seat on August 7, 2010.", photo_url: "http://www.supremecourt.gov/about/justice_pictures/EKagan.jpg" )
 
+
 case1 = Case.create!(plaintiff: "Heien", defendant: "North Carolina", argument_date: "Oct 6, 2014", opinion_date: "Dec 15, 2014", description: "Does a police officer's mistake of law provide the individualized reasonable suspicion that the Fourth Amendment requires to justify a traffic stop?", description_source: "Oyez", description_source_url: "https://www.oyez.org/cases/2014/13-604", judgement: "Affirmed, 8-1, in an opinion by Chief Justice Roberts on December 15, 2014. Justice Kagan filed a concurring opinion, in which Justice Ginsburg joined. Justice Sotomayor filed a dissenting opinion", judgement_source: "ScotusBlog", judgement_source_url: "http://www.scotusblog.com/case-files/cases/heien-v-north-carolina/", sc_arg_url: "http://www.supremecourt.gov/oral_arguments/argument_transcripts/13-604_6537.pdf", sc_op_url: "http://www.supremecourt.gov/opinions/14pdf/13-604_ec8f.pdf", sc_url: "http://www.supremecourt.gov/Search.aspx?FileName=/docketfiles/13-604.htm", scotusblog_url: "http://www.scotusblog.com/case-files/cases/heien-v-north-carolina/", oyez_url: "https://www.oyez.org/cases/2014/13-604", justia_url: "https://supreme.justia.com/cases/federal/us/574/13-604/" )
 
+roberts.opinions.create(
+ case: case1,
+ majority_with: 0,
 
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
 
-.opinions.create(
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+scalia.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+kennedy.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+thomas.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+ginsburg.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+breyer.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+alito.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+sotomayor.opinions.create(
+ case: case1,
+ majority_with: 0,
+
+ majority_wrote: 0,
+ majority_joined: 0,
+ majority_joined_full: 0,
+ majority_joined_part: 0,
+
+ concurrance_wrote: 0,
+ concurrance_number: 0,
+ concurrance_joined: 0,
+ concurrance_joined_full: 0,
+ concurrance_joined_part: 0,
+ concurrance_joined_number: 0,
+
+ dissent_with: 0,
+
+ dissent_wrote: 0,
+ dissent_number: 0,
+ dissent_joined: 0,
+ dissent_joined_full: 0,
+ dissent_joined_part: 0,
+ dissent_joined_number: 0,
+
+ con_dissent_wrote: 0,
+ con_dissent_number: 0,
+ con_dissent_joined: 0,
+ con_dissent_joined_full: 0,
+ con_dissent_joined_part: 0,
+ con_dissent_joined_number: 0,
+
+ no_part: 0,
+ num_opinions_signed: 0,
+)
+
+kagan.opinions.create(
  case: case1,
  majority_with: 0,
 
@@ -67,9 +352,6 @@ case1 = Case.create!(plaintiff: "Heien", defendant: "North Carolina", argument_d
 
 case2 = Case.create!(plaintiff: "Dart Cherokee Basin Operating Company, LLC", defendant: "Owens", argument_date: "Oct 7, 2014", opinion_date: "Dec 15, 2014", description: "Is a defendant seeking removal of a case to federal court required to provide evidence supporting federal jurisdiction in the notice of removal?", description_source: "Oyez", description_source_url: "https://www.oyez.org/cases/2014/13-719", judgement: "Reversed, 5-4, in an opinion by Justice Ginsburg on December 15, 2014. Justice Scalia filed a dissenting opinion, in which Justice Kennedy and Justice Kagan joined, and which Justice Thomas joined as to all but the last sentence. Justice Thomas also filed a dissenting opinion.", judgement_source: "ScotusBlog", judgement_source_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", sc_arg_url: "http://www.supremecourt.gov/oral_arguments/argument_transcripts/13-719_3dq3.pdf", sc_op_url: "http://www.supremecourt.gov/opinions/14pdf/13-719_8mjp.pdf", sc_url: "http://www.supremecourt.gov/Search.aspx?FileName=/docketfiles/13-719.htm", scotusblog_url: "http://www.scotusblog.com/case-files/cases/dart-cherokee-basin-operating-company-llc-v-owens/", oyez_url: "https://www.oyez.org/cases/2014/13-719", justia_url: "https://supreme.justia.com/cases/federal/us/574/13-719/" )
 
-
-scalia.opinions.create(case: case2, ruling: "dissent")
-ginsburg.opinions.create(case: case2, ruling: "dissent")
 
 
 
