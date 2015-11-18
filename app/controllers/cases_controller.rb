@@ -5,6 +5,8 @@ class CasesController < ApplicationController
 
   def show
     @case = Case.find(params[:id])
+    @justices = Justice.all
+    @opinions = Opinion.all
   end
 
   def new

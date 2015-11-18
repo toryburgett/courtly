@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :justices
+  resources :justices do
+    resources :opinions
+  end
   resources :cases
   root 'cases#index'
   devise_for :users

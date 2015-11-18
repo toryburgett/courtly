@@ -23,6 +23,19 @@
     <h3>Resources:</h3>
     <span><%= link_to "Supreme Court", @case.sc_url %> || <%= link_to "ScotusBlog", @case.scotusblog_url %> || <%= link_to "Oyez", @case.oyez_url %> || <%= link_to "Justia", @case.justia_url %></span>
   </div>
+
+
+  <div class="justiceAll">
+    <% @justices.each do |justice| %>
+      <div class="justiceSub">
+        <div class="justiceName">
+          <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).ruling  %> </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
 </div>
 
 <div class="contentEndLinks">
