@@ -1,2 +1,6 @@
-<h1>Justices#show</h1>
-<p>Find me in app/views/justices/show.html.erb</p>
+
+<h1><%= @justice.full_name %><%= @justice.title %></h1>
+<%= image_tag @justice.photo_url %>
+<p><%= @justice.bio %></p>
+
+<%= link_to "Back to Justice...s", justices_path() %>

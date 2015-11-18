@@ -10,9 +10,6 @@
 <body>
   <div class="wrapper">
     <div class="heading">
-    </div>
-
-    <div class="content">
       <% if current_user %>
         <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
       <% else %>
@@ -20,6 +17,12 @@
         <h3><%= link_to 'Login', new_user_session_path %></h3>
       <% end %>
      <br>
+    <h1> <%= link_to "JUSTICES", justices_path() %> </h1>
+    <h1> <%= link_to "CASES", cases_path() %> </h1>
+    </div>
+
+    <div class="content">
+
       <p><%= notice %></p>
       <p><%= alert %></p>
 

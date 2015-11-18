@@ -1,2 +1,17 @@
-<h1>Justices#index</h1>
-<p>Find me in app/views/justices/index.html.erb</p>
+
+<!-- WHAT THE HECK IS GOING ON????????? -->
+<!-- my controller is not connecting to my view files. What is going on? hmmmmm...... -->
+<%    @justices = Justice.all %>
+
+<div class="contentTitle">
+  <h1>Justices</h1>
+</div>
+<div class="justiceAll">
+  <% @justices.each do |justice| %>
+    <div class="caseSub">
+      <div class="caseName">
+        <h2><%= link_to justice.name, justice_path(justice) %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
