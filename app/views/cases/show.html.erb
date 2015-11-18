@@ -1,3 +1,45 @@
+<% dissent_vote = 0 %> <% majority_vote = 0 %>
+<% majority_author = "" %>
+<% concurrance_1_author = "" %> <% concurrance_2_author = "" %> <% concurrance_3_author = "" %> <% concurrance_4_author = "" %>
+<% dissent_1_author = "" %> <% dissent_2_author = "" %> <% dissent_3_author = "" %> <% dissent_4_author = "" %>
+<% con_dissent_1_author = "" %> <% con_dissent_2_author = "" %> <% con_dissent_3_author = "" %> <% con_dissent_4_author = "" %>
+
+
+<% @justices.each do |justice| %>
+  <% if (justice.opinions.find_by(case_id: @case).majority_with == 1) %>
+    <% majority_vote = majority_vote + 1 %>
+  <% elsif (justice.opinions.find_by(case_id: @case).dissent_with == 1) %>
+    <% dissent_vote = dissent_vote + 1 %>
+  <% end %>
+  <% if (justice.opinions.find_by(case_id: @case).majority_wrote == 1) %>
+    <% majority_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).concurrance_1_wrote == 1) %>
+    <% concurrance_1_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).concurrance_2_wrote == 1) %>
+    <% concurrance_2_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).concurrance_3_wrote == 1) %>
+    <% concurrance_3_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).concurrance_4_wrote == 1) %>
+    <% concurrance_4_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).dissent_1_wrote == 1) %>
+    <% dissent_1_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).dissent_2_wrote == 1) %>
+    <% dissent_2_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).dissent_3_wrote == 1) %>
+    <% dissent_3_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).dissent_4_wrote == 1) %>
+    <% dissent_4_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).con_dissent_1_wrote == 1) %>
+    <% con_dissent_1_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).con_dissent_2_wrote == 1) %>
+    <% con_dissent_2_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).con_dissent_3_wrote == 1) %>
+    <% con_dissent_3_author = justice.name %>
+  <% elsif (justice.opinions.find_by(case_id: @case).con_dissent_4_wrote == 1) %>
+    <% con_dissent_4_author = justice.name %>
+  <% end %>
+<% end %>
+
 <div class="contentTitle">
   <h2>Showing Case <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 </div>
@@ -6,7 +48,7 @@
   <h2><%= link_to @case.defendant, case_path(@case) %> <%= link_to "(edit)", edit_case_path(@case) %>  <span class="caseDelete"><%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 
   <div class="caseName">
-    <h2><%= @case.plaintiff %> vs <%= @case.defendant %></h2>
+    <h2><%= @case.plaintiff %> vs <%= @case.defendant %> -- <%= majority_vote %>-<%= dissent_vote %></h2>
   </div>
   <div class="caseDates">
     <h3>Argument Date: <%= link_to @case.argument_date, @case.sc_arg_url %> || Opinions Delivered: <%= link_to @case.opinion_date, @case.sc_op_url %> </h3>
@@ -26,57 +68,17 @@
 
 
 
-<% @justices.each do |justice| %>
-  <% if ((justice.opinions.find_by(case_id: @case).majority_wrote == 1) %>
-    <% majority_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).concurrance_1_wrote == 1) %>
-    <% concurrance_1_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).concurrance_2_wrote == 1) %>
-    <% concurrance_2_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).concurrance_3_wrote == 1) %>
-    <% concurrance_3_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).concurrance_4_wrote == 1) %>
-    <% concurrance_4_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).dissent_1_wrote == 1) %>
-    <% dissent_1_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).dissent_2_wrote == 1) %>
-    <% dissent_2_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).dissent_3_wrote == 1) %>
-    <% dissent_3_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).dissent_4_wrote == 1) %>
-    <% dissent_4_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_1_wrote == 1) %>
-    <% con_dissent_1_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_2_wrote == 1) %>
-    <% con_dissent_2_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_3_wrote == 1) %>
-    <% con_dissent_3_author = justice.name %>
-  <% end %>
-  <% if ((justice.opinions.find_by(case_id: @case).con_dissent_4_wrote == 1) %>
-    <% con_dissent_4_author = justice.name %>
-  <% end %>
-<% end %>
 
   <div class="justiceAll">
     <% @justices.each do |justice| %>
       <div class="justiceSub">
         <div class="justiceName">
           <% if (justice.opinions.find_by(case_id: @case).majority_with == 1) %>
-
-            <h2><%= justice.name %> - <%= justice.opinions.find_by(case_id: @case).majority_with  %> </h2>
-            <% if (justice.opinions.find_by(case_id: @case).dissent_with == 0) %>
-
+            <% if (majority_author == justice.name) %>
+              <h2><%= justice.name %>, *DELIVERED OPINION* - Joined court's opinion </h2>
+            <% else %>
+              <h2><%= justice.name %> - Joined court's opinion </h2>
+            <% end %>
 
           <% elsif ((justice.opinions.find_by(case_id: @case).majority_with == 0)&&(justice.opinions.find_by(case_id: @case).dissent_with == 1)) %>
             <h2><%= justice.name %> - DISSENT </h2>
