@@ -45,7 +45,6 @@
 </div>
 
 <div class="caseSub">
-  <h2><%= link_to @case.defendant, case_path(@case) %> <%= link_to "(edit)", edit_case_path(@case) %>  <span class="caseDelete"><%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 
   <div class="caseName">
     <h2><%= @case.plaintiff %> vs <%= @case.defendant %> -- <%= majority_vote %>-<%= dissent_vote %></h2>
