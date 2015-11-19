@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117205547) do
+ActiveRecord::Schema.define(version: 20151119183040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20151117205547) do
   add_index "opinions", ["case_id"], name: "index_opinions_on_case_id", using: :btree
   add_index "opinions", ["justice_id"], name: "index_opinions_on_justice_id", using: :btree
 
+  create_table "readinglists", force: :cascade do |t|
+    t.integer  "case_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "readinglists", ["case_id"], name: "index_readinglists_on_case_id", using: :btree
+  add_index "readinglists", ["user_id"], name: "index_readinglists_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -73,4 +83,6 @@ ActiveRecord::Schema.define(version: 20151117205547) do
 
   add_foreign_key "opinions", "cases"
   add_foreign_key "opinions", "justices"
+  add_foreign_key "readinglists", "cases"
+  add_foreign_key "readinglists", "users"
 end

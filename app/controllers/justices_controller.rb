@@ -5,8 +5,6 @@ class JusticesController < ApplicationController
 
   def show
     @justice = Justice.find(params[:id])
-    puts "*" *50
-    puts @justice
   end
 
   def new
