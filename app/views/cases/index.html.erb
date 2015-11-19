@@ -5,7 +5,7 @@
   <% @cases.each do |cse| %>
     <div class="caseSub">
       <div class="caseName">
-        <h2><%= link_to "#{cse.plaintiff}   v.   #{cse.defendant}", case_path(cse) %></h2>
+        <h2><%= link_to "#{cse.case}", case_path(cse) %></h2>
       </div>
     </div>
   <% end %>

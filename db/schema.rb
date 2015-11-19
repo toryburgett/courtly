@@ -17,24 +17,13 @@ ActiveRecord::Schema.define(version: 20151117205547) do
   enable_extension "plpgsql"
 
   create_table "cases", force: :cascade do |t|
-    t.string   "plaintiff"
-    t.string   "defendant"
-    t.string   "argument_date"
-    t.string   "opinion_date"
-    t.text     "description"
-    t.text     "description_source"
-    t.text     "description_source_url"
-    t.text     "judgement"
-    t.text     "judgement_source"
-    t.text     "judgement_source_url"
-    t.string   "sc_arg_url"
-    t.string   "sc_op_url"
-    t.string   "sc_url"
-    t.string   "scotusblog_url"
-    t.string   "oyez_url"
-    t.string   "justia_url"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "num"
+    t.string   "case"
+    t.integer  "volume"
+    t.string   "argue_date"
+    t.string   "decision_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "justices", force: :cascade do |t|
@@ -50,64 +39,15 @@ ActiveRecord::Schema.define(version: 20151117205547) do
   create_table "opinions", force: :cascade do |t|
     t.integer  "case_id"
     t.integer  "justice_id"
-    t.integer  "majority_with",             default: 0
-    t.integer  "majority_wrote",            default: 0
-    t.integer  "majority_joined",           default: 0
-    t.integer  "majority_joined_full",      default: 0
-    t.integer  "majority_joined_part",      default: 0
-    t.integer  "concurrance_1_wrote",       default: 0
-    t.integer  "concurrance_1_joined",      default: 0
-    t.integer  "concurrance_1_joined_full", default: 0
-    t.integer  "concurrance_1_joined_part", default: 0
-    t.integer  "concurrance_2_wrote",       default: 0
-    t.integer  "concurrance_2_joined",      default: 0
-    t.integer  "concurrance_2_joined_full", default: 0
-    t.integer  "concurrance_2_joined_part", default: 0
-    t.integer  "concurrance_3_wrote",       default: 0
-    t.integer  "concurrance_3_joined",      default: 0
-    t.integer  "concurrance_3_joined_full", default: 0
-    t.integer  "concurrance_3_joined_part", default: 0
-    t.integer  "concurrance_4_wrote",       default: 0
-    t.integer  "concurrance_4_joined",      default: 0
-    t.integer  "concurrance_4_joined_full", default: 0
-    t.integer  "concurrance_4_joined_part", default: 0
-    t.integer  "dissent_with",              default: 0
-    t.integer  "dissent_1_wrote",           default: 0
-    t.integer  "dissent_1_joined",          default: 0
-    t.integer  "dissent_1_joined_full",     default: 0
-    t.integer  "dissent_1_joined_part",     default: 0
-    t.integer  "dissent_2_wrote",           default: 0
-    t.integer  "dissent_2_joined",          default: 0
-    t.integer  "dissent_2_joined_full",     default: 0
-    t.integer  "dissent_2_joined_part",     default: 0
-    t.integer  "dissent_3_wrote",           default: 0
-    t.integer  "dissent_3_joined",          default: 0
-    t.integer  "dissent_3_joined_full",     default: 0
-    t.integer  "dissent_3_joined_part",     default: 0
-    t.integer  "dissent_4_wrote",           default: 0
-    t.integer  "dissent_4_joined",          default: 0
-    t.integer  "dissent_4_joined_full",     default: 0
-    t.integer  "dissent_4_joined_part",     default: 0
-    t.integer  "con_dissent_1_wrote",       default: 0
-    t.integer  "con_dissent_1_joined",      default: 0
-    t.integer  "con_dissent_1_joined_full", default: 0
-    t.integer  "con_dissent_1_joined_part", default: 0
-    t.integer  "con_dissent_2_wrote",       default: 0
-    t.integer  "con_dissent_2_joined",      default: 0
-    t.integer  "con_dissent_2_joined_full", default: 0
-    t.integer  "con_dissent_2_joined_part", default: 0
-    t.integer  "con_dissent_3_wrote",       default: 0
-    t.integer  "con_dissent_3_joined",      default: 0
-    t.integer  "con_dissent_3_joined_full", default: 0
-    t.integer  "con_dissent_3_joined_part", default: 0
-    t.integer  "con_dissent_4_wrote",       default: 0
-    t.integer  "con_dissent_4_joined",      default: 0
-    t.integer  "con_dissent_4_joined_full", default: 0
-    t.integer  "con_dissent_4_joined_part", default: 0
-    t.integer  "no_part",                   default: 0
-    t.integer  "num_opinions_signed",       default: 1
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.integer  "majority_with",     default: 0
+    t.integer  "majority_wrote",    default: 0
+    t.integer  "dissent_with",      default: 0
+    t.integer  "dissent_wrote",     default: 0
+    t.integer  "concurrance_wrote", default: 0
+    t.integer  "condis_wrote",      default: 0
+    t.integer  "no_part",           default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "opinions", ["case_id"], name: "index_opinions_on_case_id", using: :btree

@@ -1,30 +1,15 @@
 <div class="contentTitle">
-  <h2>Showing Case <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
+  <h2>Showing Case #<%= @case.num %>, Volume: <%= @case.volume %> <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 </div>
 
 <div class="caseSub">
 
   <div class="caseName">
-    <h2><%= @case.plaintiff %> vs <%= @case.defendant %> -- <%= majority_vote %>-<%= dissent_vote %></h2>
+    <h2><%= @case.case %> -- </h2>
   </div>
   <div class="caseDates">
-    <h3>Argument Date: <%= link_to @case.argument_date, @case.sc_arg_url %> || Opinions Delivered: <%= link_to @case.opinion_date, @case.sc_op_url %> </h3>
+    <h3>Argument Date: <%= @case.argue_date%> || Opinions Delivered: <%= @case.decision_date %> </h3>
   </div>
-  <div class="caseDescription">
-    <h3>Question: </h3>
-    <p><%= @case.description %> || <%= link_to @case.description_source, @case.description_source_url %></p>
-  </div>
-  <div class="caseJudgement">
-    <h3>Judgement: </h3>
-    <p><%= @case.judgement %> || <%= link_to @case.judgement_source, @case.judgement_source_url %></p>
-  </div>
-  <div class="caseResources">
-    <h3>Resources:</h3>
-    <span><%= link_to "Supreme Court", @case.sc_url %> || <%= link_to "ScotusBlog", @case.scotusblog_url %> || <%= link_to "Oyez", @case.oyez_url %> || <%= link_to "Justia", @case.justia_url %></span>
-  </div>
-
-
-
 
   <div class="justiceAll">
     <% @justices.each do |justice| %>
@@ -32,10 +17,17 @@
         <div class="justiceName">
         <%= justice.name %>
           </div>
-    <%= end %>
+    <% end %>
 
 </div>
 
 <div class="contentEndLinks">
-  <%= link_to "Back to cases", cases_path() %>
+  <p><%= link_to "Back to cases", cases_path() %></p>
+  <% if (@case.num == 1) %>
+    <%= link_to " Next Case -->", case_path(2) %>
+  <% elsif (@case.num == 74)%>
+    <%= link_to "<-- Previous Case ", case_path(73) %>
+  <% else %>
+    <%= link_to "<-- Previous Case ", case_path((@case.num - 1)) %> || <%= link_to " Next Case -->", case_path((@case.num + 1)) %>
+  <% end %>
 </div>
