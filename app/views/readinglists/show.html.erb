@@ -1,0 +1,30 @@
+<% if @user==current_user %>
+  <div class="contentTitle">
+    <h2>Welcome, <%= @user.email %></h2>
+  </div>
+
+  <h2> Your Reading List </h2>
+  <div class="readinglistAll">
+    <% @readinglists.each do |read| %>
+      <div class="readinglistSub">
+        <p><%= read.case.case %> <%= link_to "(edit)", edit_readinglist_path(read) %> <span class="articleDelete"> <%= link_to "(destroy)", readinglist_path(read), method: :delete, data: { confirm: 'Are you sure?'} %></span></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="contentTitle">
+    <h2>Showing User <%= @user.email %></h2>
+  </div>
+
+  <h2> Reading List </h2>
+  <div class="readinglistAll">
+    <% @readinglists.each do |read| %>
+      <div class="readinglistSub">
+        <p><%= read.case.case %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+  <div class="contentEndLinks">
+    <p><%= link_to "Back to users", users_path() %></p>
+  </div>

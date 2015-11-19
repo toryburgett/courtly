@@ -5,6 +5,8 @@ class CreateReadinglists < ActiveRecord::Migration
       t.references :case, index:true, foreign_key: true
       t.references :user, index:true, foreign_key: true
 
+      t.text :comment 
+
       t.timestamps null: false
     end
   end

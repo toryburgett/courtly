@@ -1,0 +1,11 @@
+<%= form_for ([@case, @case.readinglists.build]) do |f| %>
+  <p>
+    <%= f.label :user %><br>
+    <%= f.text_field user: current_user %>
+  </p>
+
+  <p>Add to Reading List?</p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

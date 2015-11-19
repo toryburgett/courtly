@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get 'readinglist/index'
 
-  get 'readinglist/show'
-
-  get 'readinglist/new'
-
-  get 'readinglist/edit'
+  resources :readinglists
 
   resources :justices do
     resources :opinions

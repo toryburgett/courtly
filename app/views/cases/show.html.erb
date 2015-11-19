@@ -2,6 +2,15 @@
   <h2>Showing Case #<%= @case.num %>, Volume: <%= @case.volume %> <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
 </div>
 
+<% if current_user %>
+      <p>Add to Reading List?</p>
+      <p>
+        <button>
+      </p>
+<% end %>
+
+<% @majority = 0 %>
+<% @dissent = 0 %>
 <div class="caseSub">
 
   <div class="caseName">
@@ -16,10 +25,20 @@
       <div class="justiceSub">
         <div class="justiceName">
         <%= justice.name %>
+        <%if justice.majority_with == 1 %>
+        <% @majority = @majority + 1 %>
+          - majority
+        <% elsif justice.dissent_with == 1 %>
+        <% @dissent = @dissent + 1 %>
+          - dissent
+        <% else %>
+          - did not participate in vote
+        <% end %>
           </div>
     <% end %>
-
+    <h2> Majority: <%= @majority %> - Minority: <%= @minority %></h2>
 </div>
+
 
 <div class="contentEndLinks">
   <p><%= link_to "Back to cases", cases_path() %></p>
