@@ -983,3 +983,14 @@ kagan = Justice.create!( name: "Kagan", full_name: "Elena Kagan", title: "Associ
   alito.opinions.create(case: case74, majority_with: 1, majority_wrote: 1)
   sotomayor.opinions.create(case: case74, dissent_with: 1, dissent_wrote: 1)
   kagan.opinions.create(case: case74, dissent_with: 1)
+
+  martha = User.create!(email: 'martha@stewart.com', password: 'topsecret', password_confirmation: 'topsecret')
+  bob = User.create!(email: 'bob@bob.com', password: 'topsecret', password_confirmation: 'topsecret')
+  sally = User.create!(email: 'sally@sally.com', password: 'topsecret', password_confirmation: 'topsecret')
+  tory = User.create!(email: 'tory@tory.com', password: 'topsecret', password_confirmation: 'topsecret')
+
+martha.readinglists.create(case: case3)
+bob.readinglists.create(case: case9)
+sally.readinglists.create(case: case21)
+tory.readinglists.create(case: case22)
+tory.readinglists.create(case: case21)

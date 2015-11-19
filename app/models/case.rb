@@ -4,4 +4,7 @@ class Case < ActiveRecord::Base
   has_many :opinions
   has_many :justices, through: :opinions
 
+  has_many :readinglists
+  has_many :users, through: :readinglists
+
 end
