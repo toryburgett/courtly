@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'cases#index'
+  root 'welcome#index'
+  resources :about, only: [:index]
+
   resources :justices do
     resources :opinions
   end

@@ -12,6 +12,7 @@
   <div class="courtlySideBar" id="fullheight">
     <div class="courtlySideTop">
       <% if current_user %>
+      <h2>Welcome, <%= current_user.email %></h2>
       <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
       <% else %>
       <h3><%= link_to 'Signup', new_user_registration_path %></h3>
@@ -39,7 +40,7 @@
 
   <div class="courtlyContent" id="fullheight">
     <div class="courtlyContentTop">
-      <h1> HOME <%= link_to "JUSTICES", justices_path() %>  <%= link_to "CASES", cases_path() %> </h1>
+      <h1> <%= link_to "HOME", root_path() %> <%= link_to "JUSTICES", justices_path() %>  <%= link_to "CASES", cases_path() %> <%= link_to "ABOUT", about_index_path() %></h1>
     </div>
     <div class="courtlyWrapper">
       <div class="content">
@@ -50,7 +51,7 @@
     </div>
   </div>
   <div class="footing">
-    <p>I MADE THIS</p>
+    <p>Tory Burgett, 2015</p>
   </div>
 </body>
 </html>
