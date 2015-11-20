@@ -48,3 +48,7 @@ end
 gem 'devise'
 
 gem 'chartkick'
+
+group :production do
+  gem 'rails_12factor'
+end
