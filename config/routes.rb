@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :readinglists
-
   resources :justices do
     resources :opinions
   end
   resources :cases
   root 'cases#index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

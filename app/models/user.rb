@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
          has_many :readinglists, dependent: :destroy
          has_many :cases, through: :readinglists
-
+        
 end

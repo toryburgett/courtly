@@ -8,31 +8,45 @@
   <link href='https://fonts.googleapis.com/css?family=Exo:800|Vollkorn' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="heading">
+
+  <div class="courtlySideBar" id="fullheight">
+    <div class="courtlySideTop">
       <% if current_user %>
         <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
       <% else %>
         <h3><%= link_to 'Signup', new_user_registration_path %></h3>
         <h3><%= link_to 'Login', new_user_session_path %></h3>
       <% end %>
-     <br>
-    <h1> <%= link_to "JUSTICES", justices_path() %> </h1>
-    <h1> <%= link_to "CASES", cases_path() %> </h1>
-    <h1> <%= link_to "READING LIST", readinglists_path() %> </h1>
     </div>
 
-    <div class="content">
+  </div>
 
-      <p><%= notice %></p>
-      <p><%= alert %></p>
-
-      <%= yield %>
-
+  <div class="courtlyContent" id="fullheight">
+    <div class="courtlyContentTop">
+      <h1> HOME <%= link_to "JUSTICES", justices_path() %>  <%= link_to "CASES", cases_path() %> </h1>
     </div>
+    <div class="courtlyWrapper">
+      <div class="heading">
 
-    <div class="footing">
+       <br>
+
+
+      </div>
+
+      <div class="content">
+
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+
+        <%= yield %>
+
+      </div>
+
+      <div class="footing">
+        <p>I MADE THIS</p>
+      </div>
     </div>
   </div>
+
 </body>
 </html>

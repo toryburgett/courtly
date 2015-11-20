@@ -1,5 +1,5 @@
 <div class="contentTitle">
-  <h2>Showing Case #<%= @case.num %>, Volume: <%= @case.volume %> <%= link_to "(edit)", edit_case_path(@case) %> <span class="caseDelete"> <%= link_to "(destroy)", case_path(@case), method: :delete, data: { confirm: 'Are you sure?'} %></span></h2>
+  <h2>Showing Case #<%= @case.num %>, Volume: <%= @case.volume %></h2>
 </div>
 
 <% if current_user %>
@@ -25,10 +25,10 @@
       <div class="justiceSub">
         <div class="justiceName">
         <%= justice.name %>
-        <%if justice.majority_with == 1 %>
+        <%if justice.opinions.find_by(case: @case).majority_with == 1 %>
         <% @majority = @majority + 1 %>
           - majority
-        <% elsif justice.dissent_with == 1 %>
+        <% elsif justice.opinions.find_by(case: @case).dissent_with == 1 %>
         <% @dissent = @dissent + 1 %>
           - dissent
         <% else %>
@@ -36,7 +36,7 @@
         <% end %>
           </div>
     <% end %>
-    <h2> Majority: <%= @majority %> - Minority: <%= @minority %></h2>
+    <h2> Majority: <%= @majority %> - Minority: <%= @dissent %></h2>
 </div>
 
 
