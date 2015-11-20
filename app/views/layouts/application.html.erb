@@ -22,16 +22,10 @@
     <div class="readinglistAll">
       <h3> Your Reading List </h3>
       <% current_user.readinglists.each do |read| %>
-      <div class="readinglistSub"><%= link_to read.case.case, case_path(read.case.case) %> </div>
+      <div class="readinglistSub"><%= link_to "#{read.case.case}", case_path(read.case) %> </div>
       <div class="readinglistComment"><%= read.comment %></div>
-      <%= form_for add_readinglist_case_path(current_user, read.case) do |f| %>
-        <p>
-        <%= f.label :comment %><br>
-        <%= f.text_field :comment %>
-        </p>
-        <p> <%= f.submit %> </p>
-      <% end %>
-      <div class="destroyReadinglist"><%= link_to "(destroy)", remove_readinglist_case_path(read.case), method: :delete, data: { confirm: 'Are you sure?'} %>
+      <div class="readinglistEdit"><%= link_to "Edit or add a comment", edit_case_readinglist_path(read.case, read) %></div>
+      <div class="destroyReadinglist"><%= link_to "Remove case from Reading List", remove_readinglist_case_path(read.case), method: :delete, data: { confirm: 'Are you sure?'} %>
       </div>
 
       <div class="clearfix"></div>

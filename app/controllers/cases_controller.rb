@@ -68,10 +68,4 @@ class CasesController < ApplicationController
     end
   end
 
-
-  private
-  def article_params
-    params.require(:case).permit(:plaintiff, :defendant, :opiniondate, :argument, :description, :judgement)
-  end
-
 end

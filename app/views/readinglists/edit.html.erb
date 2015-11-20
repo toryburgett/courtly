@@ -1,2 +1,9 @@
-<h1>Case#edit</h1>
-<p>Find me in app/views/case/edit.html.erb</p>
+<h3>EDIT READING LIST COMMENT - <%= @readinglist.case.case %></h3>
+
+<%= form_for :readinglist, url: case_readinglist_path(@readinglist.case, @readinglist), method: :patch do |f| %>
+  <p>
+  <%= f.label :comment %><br>
+  <%= f.text_field :comment %>
+  </p>
+  <p> <%= f.submit %> </p>
+<% end %>

@@ -1,33 +1,21 @@
-class OpinionsController < ApplicationController
+class ReadinglistsController < ApplicationController
 
-def new
-  @case = Case.find(params[:id])
-  @case.readinglists.create(user: current_user)
-  redirect_to cases_path()
-end
-
-
-def edit
-  @case = Case.find(params[:id])
-  @case.readinglists.where(user: current_user)
-end
-
-
-def update
-  @case = Case.find(params[:id])
-  if @case.readinglists.where(user: current_user).update(:comment)
-    redirect_to cases_path()
-  else
-    render 'edit_readinglist'
+  def update
+    @readinglist = Readinglist.find(params[:id])
+    if @readinglist.update(readinglist_params)
+      redirect_to cases_path()
+    else
+      render 'edit'
+    end
   end
-end
 
-def destroy
-  @case = Case.find(params[:id])
-  @case.readinglists.where(user: current_user).destroy_all
-  redirect_to cases_path()
-end
+  def edit
+    @readinglist = Readinglist.find(params[:id])
+  end
 
-
+  private
+  def readinglist_params
+    params.require(:readinglist).permit(:case, :user, :comment)
+  end
 
 end

@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     resources :opinions
   end
   resources :cases do
-    resources :readinglists
+    resources :readinglists, only: [:edit, :update]
+    member do
+      post 'add_readinglist'
+      delete 'remove_readinglist'
+      patch 'edit_readinglist'
+    end
   end
 
 
