@@ -2,8 +2,12 @@
 
 = Question: What goes on in the Supreme Court?
 
-To many, the highest court in the land can seem mysterious (other possible adjectives: unknowable and perplexing?). 'Courtly' (temp name until I can think of something cooler) seeks to help offer insight into the court by using comparing the delivery opinions of the the nine justices. How often do the Justices cosign each other's opinion? How often do justices write the majority opinion?
+To many, the highest court in the land can seem mysterious. 'Courtly' seeks to help offer insight into the court by using comparing the delivery opinions of the the nine justices. How often do the Justices agree with the majority opinion? How often do they dissent? How often do justices write the majority opinion?
 
-Goal: Exploring the website, users can save previous cases to their "Reading List."
-
-(will expand on this a lot more, hopefully)
+Exploring the website, users can save previous cases to their "Reading List", which will create a shortcut to go to the case page.
+Users will always have access to their Reading List when they are signed in, and it will always be present on the page.
+Users will have unique Reading Lists and preform CRUD actions to their own list without affecting other users reading lists.
+Users can add a comment to their readinglist for their own reference.
+Users can delete a case from their readinglist when they no longer want it on their shortcuts.
+Users can find cases in the entire 2014 term. On the show page they can visit the next or previous case, depending on the case number.
+Users can view the justices page to learn a little bit about the supreme court justices by reading their bio.

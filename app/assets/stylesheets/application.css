@@ -20,6 +20,7 @@
 html, body, #fullheight {
   min-height: 100% !important;
   height: 100%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 #fullheight{
@@ -121,29 +122,17 @@ body{
 /* **************************************** */
 /* **************************************** */
 /* **************************************** */
-/* ******** Article Sections ************** */
 .caseSub{
-  border: 2px solid green;
-}
-.caseForm{
-  border: 2px solid yellow;
 }
 .caseAll{
-  border: 2px solid magenta;
-}
-.caseDelete{
-  border: 2px solid lightSkyBlue;
 }
 /* **************************************** */
 /* **************************************** */
 /* **************************************** */
 /* **************************************** */
 .contentTitle{
-  border: 2px solid darksalmon;
-
 }
 .contentEndLinks{
-  border: 2px solid lime;
 }
 /* ************************************** */
 /* ************************************** */
@@ -195,6 +184,9 @@ body{
   height: 2px;
 }
 
+.welcome{
+  text-align: center;
+}
 
 /* ************************************** */
 /* ************************************** */
