@@ -51,6 +51,7 @@ body{
   width: 100%;
   height: 80px;
   background-color: rgb(20, 100, 169);
+  text-align: center;
 }
 .courtlyContent{
   margin-right: 230px;
@@ -59,9 +60,30 @@ body{
 }
 .courtlyContentTop{
   width: 100%;
-  height: 80px;
   background-color: rgb(40, 130, 200);
+  text-align: center;
+  color: white;
 }
+.courtlyContentTopNav{
+  padding: 20px;
+  height: 40px;
+}
+.courtlyContentTopNav a{
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  border: 2px solid rgb(40, 130, 200);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+.courtlyContentTopNav a:hover{
+  border: 2px solid rgb(211, 54, 39);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
 .courtlyWrapper{
   width: 80%;
   margin: 10px auto;
@@ -187,6 +209,15 @@ body{
 .welcome{
   text-align: center;
 }
+.welcomeImage{
+  margin: 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgb(20, 100, 169);
+  color: rgb(20, 100, 169);
+}
+
+
 
 /* ************************************** */
 /* ************************************** */
