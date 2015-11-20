@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Courtly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Exo:800|Vollkorn' rel='stylesheet' type='text/css'>
@@ -12,13 +12,35 @@
   <div class="courtlySideBar" id="fullheight">
     <div class="courtlySideTop">
       <% if current_user %>
-        <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+      <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
       <% else %>
-        <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-        <h3><%= link_to 'Login', new_user_session_path %></h3>
+      <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+      <h3><%= link_to 'Login', new_user_session_path %></h3>
       <% end %>
     </div>
+    <% if current_user %>
+    <div class="readinglistAll">
+      <h3> Your Reading List </h3>
+      <% current_user.readinglists.each do |read| %>
+      <div class="readinglistSub"><%= link_to read.case.case, case_path(read.case.case) %> </div>
+      <div class="readinglistComment"><%= read.comment %></div>
+      <%= form_for add_readinglist_case_path(current_user, read.case) do |f| %>
+        <p>
+        <%= f.label :comment %><br>
+        <%= f.text_field :comment %>
+        </p>
+        <p> <%= f.submit %> </p>
+      <% end %>
+      <div class="destroyReadinglist"><%= link_to "(destroy)", remove_readinglist_case_path(read.case), method: :delete, data: { confirm: 'Are you sure?'} %>
+      </div>
 
+      <div class="clearfix"></div>
+      <% end %>
+
+    </div>
+    <% else %>
+      <h3>Please sign in to use Reading Lists</h3>
+    <% end %>
   </div>
 
   <div class="courtlyContent" id="fullheight">
@@ -26,27 +48,15 @@
       <h1> HOME <%= link_to "JUSTICES", justices_path() %>  <%= link_to "CASES", cases_path() %> </h1>
     </div>
     <div class="courtlyWrapper">
-      <div class="heading">
-
-       <br>
-
-
-      </div>
-
       <div class="content">
-
         <p><%= notice %></p>
         <p><%= alert %></p>
-
         <%= yield %>
-
-      </div>
-
-      <div class="footing">
-        <p>I MADE THIS</p>
       </div>
     </div>
   </div>
-
+  <div class="footing">
+    <p>I MADE THIS</p>
+  </div>
 </body>
 </html>

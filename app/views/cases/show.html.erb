@@ -3,10 +3,11 @@
 </div>
 
 <% if current_user %>
-      <p>Add to Reading List?</p>
-      <p>
-        <button>
-      </p>
+<% if Readinglist.find_by(user: current_user, case: @case) %>
+      <%= link_to "REMOVE FROM READING LIST", remove_readinglist_case_path(@case), method: :delete, class: "fav" %>
+    <% else %>
+      <%= link_to "ADD TO READING LIST", add_readinglist_case_path(@case), method: :post%>
+    <% end %>
 <% end %>
 
 <% @majority = 0 %>

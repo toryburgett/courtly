@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20151119183040) do
   create_table "readinglists", force: :cascade do |t|
     t.integer  "case_id"
     t.integer  "user_id"
+    t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -989,8 +989,8 @@ kagan = Justice.create!( name: "Kagan", full_name: "Elena Kagan", title: "Associ
   sally = User.create!(email: 'sally@sally.com', password: 'topsecret', password_confirmation: 'topsecret')
   tory = User.create!(email: 'tory@tory.com', password: 'topsecret', password_confirmation: 'topsecret')
 
-martha.readinglists.create(case: case3)
-bob.readinglists.create(case: case9)
-sally.readinglists.create(case: case21)
-tory.readinglists.create(case: case22)
-tory.readinglists.create(case: case21)
+martha.readinglists.create(case: case3, comment: "Need to research more")
+bob.readinglists.create(case: case9, comment: "Similar previous cases?")
+sally.readinglists.create(case: case21, comment: "Dissent pattern?")
+tory.readinglists.create(case: case22, comment: "Correlation to earlier case?")
+tory.readinglists.create(case: case21, comment: "Similar previous cases?")

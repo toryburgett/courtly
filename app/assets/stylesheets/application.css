@@ -1,34 +1,34 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 
 
- * { padding: 0; margin: 0; }
- html, body, #fullheight {
-     min-height: 100% !important;
-     height: 100%;
- }
+* { padding: 0; margin: 0; }
+html, body, #fullheight {
+  min-height: 100% !important;
+  height: 100%;
+}
 
 #fullheight{
   overflow:auto;
 }
 
- *{
-   font-family: 'Vollkorn', serif;
- }
+*{
+
+}
 
 body{
   background-color: white;
@@ -40,50 +40,56 @@ body{
 }
 
 .courtlySideBar{
-   margin: 0px;
-   width: 230px;
-   float: right;
-   background-color: rgb(106,160,203);
-   height: 100%;
+  margin: 0px;
+  width: 230px;
+  float: right;
+  background-color: rgb(106,160,203);
+  height: 100%;
 }
 .courtlySideTop{
- width: 100%;
- height: 80px;
- background-color: rgb(6, 96, 169);
+  width: 100%;
+  height: 80px;
+  background-color: rgb(20, 100, 169);
 }
 .courtlyContent{
-   margin-right: 230px;
-   background-color: white;
-   z-index: 1;
+  margin-right: 230px;
+  background-color: white;
+  margin-bottom: 1px;
 }
 .courtlyContentTop{
- width: 100%;
- height: 80px;
- background-color: rgb(10, 105, 180);
-
+  width: 100%;
+  height: 80px;
+  background-color: rgb(40, 130, 200);
 }
 .courtlyWrapper{
- width: 80%;
- margin: 10px auto;
- color: rgb(211, 54, 39);
+  width: 80%;
+  margin: 10px auto;
+  color: rgb(211, 54, 39);
 }
 
- /* ************************************** */
- /* ************************************** */
- /* ********** Main Groupings ************ */
+.footing {
+  bottom: 0;
+  background: rgb(211, 54, 39);
+  color: white;
+  text-align: center;
+}
 
- .heading{
-  font-family: 'Exo', sans-serif;
- }
- .content{
+/* ************************************** */
+/* ************************************** */
+/* ********** Main Groupings ************ */
 
- }
- .footing{
+.heading{
 
- }
- /* ************************************** */
- /* ************************************** */
- /* *************** Cases **************** */
+}
+.content{
+
+}
+.footing{
+
+}
+/* ************************************** */
+/* ************************************** */
+/* *************** Cases **************** */
 .caseForm{
 
 }
@@ -102,64 +108,108 @@ body{
 .caseResources{
 
 }
- /* ************************************** */
- /* ************************************** */
- /* ************* Error ****************** */
+/* ************************************** */
+/* ************************************** */
+/* ************* Error ****************** */
 #error_explanation{
 
 }
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
 
- body{
-  font-family: 'Vollkorn', serif;
- }
+/* **************************************** */
+/* **************************************** */
+/* **************************************** */
+/* ******** Article Sections ************** */
+.caseSub{
+  border: 2px solid green;
+}
+.caseForm{
+  border: 2px solid yellow;
+}
+.caseAll{
+  border: 2px solid magenta;
+}
+.caseDelete{
+  border: 2px solid lightSkyBlue;
+}
+/* **************************************** */
+/* **************************************** */
+/* **************************************** */
+/* **************************************** */
+.contentTitle{
+  border: 2px solid darksalmon;
 
- /* **************************************** */
- /* **************************************** */
- /* **************************************** */
- /* ******** Article Sections ************** */
- .caseSub{
-   border: 2px solid green;
- }
- .caseForm{
-   border: 2px solid yellow;
- }
- .caseAll{
-   border: 2px solid magenta;
- }
- .caseDelete{
-   border: 2px solid lightSkyBlue;
- }
- /* **************************************** */
- /* **************************************** */
- /* **************************************** */
- /* **************************************** */
- .contentTitle{
-   border: 2px solid darksalmon;
-   font-family: 'Exo', sans-serif;
- }
- .contentEndLinks{
-   border: 2px solid lime;
- }
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
- /* ************************************** */
+}
+.contentEndLinks{
+  border: 2px solid lime;
+}
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+.courtlySideBar a{
+  text-decoration: none;
+  color: white;
+  text-align: center;
+
+}
+
+.readinglistSub{
+  background: rgba(248,80,50,1);
+  background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(50%, rgba(241,111,92,0.75)), color-stop(51%, rgba(246,41,12,0.74)), color-stop(71%, rgba(240,47,23,0.64)), color-stop(100%, rgba(231,56,39,0.49)));
+  background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);
+  background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);
+  background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);
+  background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=0 );
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  padding: 5px;
+  margin: 5px;
+}
+
+.readinglistSub:hover{
+  -webkit-box-shadow: 10px 10px 47px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 47px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 47px 0px rgba(0,0,0,0.75);
+}
+
+.destroyReadinglist{
+  font-style: italic;
+  text-align: center;
+  font-size: 1em;
+  float: left;
+  border-bottom: 2px solid white;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+}
+
+.barrier{
+  border-top: 2px solid white;
+  width: 100%;
+  height: 2px;
+}
+
+
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */

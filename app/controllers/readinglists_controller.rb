@@ -1,41 +1,33 @@
-class ReadinglistsController < ApplicationController
-  def index
-    if current_user
-    @user = current_user
-    @readinglists =  @user.readinglists
-    else
-    @users = User.all
-    @readinglists = Readinglist.all
-    end
-  end
+class OpinionsController < ApplicationController
 
-  def show
-    @readinglist = Readinglist.find(params[:id])
-    @user = @readinglist.user
-  end
+def new
+  @case = Case.find(params[:id])
+  @case.readinglists.create(user: current_user)
+  redirect_to cases_path()
+end
 
-  def new
-  end
 
-  def edit
-  end
+def edit
+  @case = Case.find(params[:id])
+  @case.readinglists.where(user: current_user)
+end
 
-  def create
-    @case = Case.find(params[:case_id])
-    @readinglist = current_user.readinglists.create(case: @case, comment: "comment_params")
-    redirect_to readinglist_path()
-  end
 
-  def update
+def update
+  @case = Case.find(params[:id])
+  if @case.readinglists.where(user: current_user).update(:comment)
+    redirect_to cases_path()
+  else
+    render 'edit_readinglist'
   end
+end
 
-  def destroy
-  end
+def destroy
+  @case = Case.find(params[:id])
+  @case.readinglists.where(user: current_user).destroy_all
+  redirect_to cases_path()
+end
 
-  private
-  def readinglist_params
-    params.require(:readinglist).permit(:user, :case, :comment)
-  end
 
 
 end
