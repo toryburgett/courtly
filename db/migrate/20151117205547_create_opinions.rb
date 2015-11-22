@@ -4,6 +4,8 @@ class CreateOpinions < ActiveRecord::Migration
       t.references :case, index:true, foreign_key: true
       t.references :justice, index:true, foreign_key: true
 
+      t.string :sided, default: "no part"
+
       t.integer :majority_with, default: 0
       t.integer :majority_wrote, default: 0
 
