@@ -3,4 +3,12 @@
 <%= image_tag @justice.photo_url %>
 <p><%= @justice.bio %></p>
 
+<%= pie_chart [{name: "Agreed with Majority", data: @majoirty_votes_total},{name: "Sided with Dissent", data: @dissent_votes_total}] %>
+
+<%= pie_chart Opinion.group(:majority_wrote).count %>
+
+<h2> Majority Opinions Written: <%= @wrote_majority  %> </h2>
+<h2> Dissenting Opinions Written: <%= @wrote_dissent  %> </h2>
+<h2> Majority With: <%= @majoirty_votes_total  %> </h2>
+<h2> Dissent With: <%= @dissent_votes_total  %> </h2>
 <%= link_to "Back to Justice...s", justices_path() %>
