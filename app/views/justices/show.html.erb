@@ -3,9 +3,9 @@
 <%= image_tag @justice.photo_url %>
 <p><%= @justice.bio %></p>
 
-<%= pie_chart [{name: "Agreed with Majority", data: @majoirty_votes_total},{name: "Sided with Dissent", data: @dissent_votes_total}] %>
 
-<%= pie_chart Opinion.group(:majority_wrote).count %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%= pie_chart @justice.opinions.group(:sided).count %>
 
 <h2> Majority Opinions Written: <%= @wrote_majority  %> </h2>
 <h2> Dissenting Opinions Written: <%= @wrote_dissent  %> </h2>
