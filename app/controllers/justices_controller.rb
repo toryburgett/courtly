@@ -6,6 +6,7 @@ class JusticesController < ApplicationController
   def show
     @justice = Justice.find(params[:id])
     @opinions = @justice.opinions
+    # AM: There's a lot of code here. Perhaps you can create a Justice method that generates all this information and returns it all as a hash, which you can then easily reference in your Controller and/or View.
     @wrote_majority = 0
     @wrote_dissent = 0
     @majoirty_votes_total = 0

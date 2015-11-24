@@ -97,6 +97,8 @@ body{
   text-align: center;
 }
 
+/* AM: +1 separating your stylesheet into sections. */
+
 /* ************************************** */
 /* ************************************** */
 /* ********** Main Groupings ************ */
@@ -113,6 +115,8 @@ body{
 /* ************************************** */
 /* ************************************** */
 /* *************** Cases **************** */
+
+/* AM: If you don't end up using these class selectors, I suggest just taking them out. Will save a lot of room in your stylesheet! */
 .caseForm{
 
 }
@@ -166,6 +170,7 @@ body{
 
 }
 
+/* AM: You've got some fancy CSS going on here! */
 .readinglistSub{
   background: rgba(248,80,50,1);
   background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,0.75) 50%, rgba(246,41,12,0.74) 51%, rgba(240,47,23,0.64) 71%, rgba(231,56,39,0.49) 100%);

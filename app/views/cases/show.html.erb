@@ -3,6 +3,7 @@
 </div>
 
 <% if current_user %>
+<!-- AM: If possible, I would avoid executing logic like this in the view. Instead, maybe save a boolean value to an instance variable in your controller and reference it here instead. -->
 <% if Readinglist.find_by(user: current_user, case: @case) %>
       <%= link_to "REMOVE FROM READING LIST", remove_readinglist_case_path(@case), method: :delete, class: "fav" %>
     <% else %>
@@ -10,6 +11,7 @@
     <% end %>
 <% end %>
 
+<!-- AM: I would also refrain from variable assignment in the view, if possible. -->
 <% @majority = 0 %>
 <% @dissent = 0 %>
 <div class="caseSub">
