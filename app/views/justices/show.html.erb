@@ -3,7 +3,8 @@
 <%= image_tag @justice.photo_url %>
 <p><%= @justice.bio %></p>
 
-
+<!-- AM: Is there a particular reason you're including this external JS file here? -->
+<!-- AM: For Rails best practice concerning external JS files, check this link out: http://railsapps.github.io/rails-javascript-include-external.html -->
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%= pie_chart @justice.opinions.group(:sided).count %>
 

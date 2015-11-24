@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20151119183040) do
     t.datetime "updated_at", null: false
   end
 
+  # AM: Nothing wrong with having all these attributes - sometimes it's necessary! But encourage you to think about other ways to organize your schema that might not require this.
+  # AM: I'm not familiar enough with subject matter to know what makes sense here, but perhaps you could delegate things like "Dissent" or "Concurrance" to its own single column in the join table?
   create_table "opinions", force: :cascade do |t|
     t.integer  "case_id"
     t.integer  "justice_id"

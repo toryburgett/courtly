@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :justices do
     resources :opinions
   end
+  # AM: Is a Reading List a list of cases that a User wants to keep track of? Is there a particular reason that it always exists under a Case in the URL?
   resources :cases do
     resources :readinglists, only: [:edit, :update]
+    # AM: +1 creating these custom routes.
     member do
       post 'add_readinglist'
       delete 'remove_readinglist'
