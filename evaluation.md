@@ -18,7 +18,7 @@
 
 **Meets Expectations**. Your code styling was consistent and very readable - keep it up! And props on separating your stylesheet using comments. Make sure to check out my inline code comments via the link below.
 
-[Inline code comments.]()
+[Inline code comments.](https://github.com/toryburgett/courtly/pull/1/files)
 
 ## Problem Solving
 
